@@ -1,0 +1,86 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "vlucas/phpdotenv": "^2.4",
+        "aliyuncs/oss-sdk-php": "^2.2",
+        "hpyer/aliyun-sts": "^1.0@dev",
+        "udokmeci/yii2-beanstalk" : "dev-master",
+        "ext-openssl": "*",
+        "pimple/pimple": "~3.0",
+        "monolog/monolog": "^1.17",
+        "overtrue/socialite": ">=1.0.7",
+        "doctrine/cache": "~1.4",
+        "guzzlehttp/guzzle": "~6.2.1",
+        "symfony/http-foundation": "~2.6|~2.7|~2.8|~3.0",
+        "symfony/psr-http-message-bridge": "~0.3|^1.0",
+        "phpoffice/phpexcel": "^1.8",
+        "paquettg/php-html-parser": "^1.7"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
+    "autoload": {
+        "files": [
+            "common/helpers/EnvHelper.php",
+            "common/libraries/CustomWechat/wechat/src/Payment/helpers.php"
+        ],
+        "psr-4": {
+            "EasyWeChat\\": "common/libraries/CustomWechat/wechat/src/"
+        }
+    }
+}

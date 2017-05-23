@@ -1,0 +1,15 @@
+30 6 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii statistics/update-fans-statistics-total
+30 6 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii statistics/update-article-statistics-daily-incr
+30 7 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-statistic-data
+30 8 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/check-statistic-data
+30 6 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-statistic-menu-data
+
+*/1 * * * * /usr/bin/php /home/deploy/wx_admin_platform/yii mass/batch-send-msg
+*/30 * * * * /usr/bin/php /home/deploy/wx_admin_platform/yii utils/clean-tmp
+
+#* */6 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-fans
+#* */6 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-fans-info
+#* */4 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-material-image
+#* */4 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii sync/sync-material-news
+#30 2 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii fix-syn/fix-article-multi
+#30 2 * * * /usr/bin/php /home/deploy/wx_admin_platform/yii fix-syn/fix-image-maerial
