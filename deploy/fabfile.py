@@ -34,9 +34,9 @@ def product():
     """
     global current_conf
     current_conf = 'env.pro'
-    product_host = 'root@119.23.142.227:22'
+    product_host = 'root@127.0.0.1:22'
     env.passwords = {
-        product_host: "Dafyjk1024"
+        product_host: "111111"
     }
     env.hosts = [product_host]
 
@@ -46,9 +46,9 @@ def product_new_one():
     """
     global current_conf
     current_conf = 'env.pronewone'
-    product_host = 'root@139.196.31.106:22'
+    product_host = 'root@127.0.0.1:22'
     env.passwords = {
-        product_host: "#sCWeC^2"
+        product_host: "#"
     }
     env.hosts = [product_host]
 
@@ -57,7 +57,7 @@ def product_local():
     """
     产品环境
     """
-    product_host = 'root@192.168.1.63:22'
+    product_host = 'root@127.0.0.1:22'
     env.passwords = {
         product_host: "root"
     }
@@ -70,9 +70,9 @@ def product_test():
     """
     global current_conf
     current_conf = 'env.dev'
-    product_host = 'root@120.24.17.53:22'
+    product_host = 'root@127.0.0.1:22'
     env.passwords = {
-        product_host: "Dafyjk1024"
+        product_host: "111111"
     }
     env.hosts = [product_host]
 
